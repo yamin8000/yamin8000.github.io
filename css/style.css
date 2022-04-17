@@ -1,0 +1,20 @@
+/* General */
+body {
+    
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
