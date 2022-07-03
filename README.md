@@ -1,1 +1,1 @@
-# yamin8000.github.io
+# [yamins.ir](http://yamins.ir)
