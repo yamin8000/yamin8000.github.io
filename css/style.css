@@ -2,13 +2,13 @@
 body {
     font-family: Heebo, serif;
     align-content: center;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin: 50px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     transition: background-color 0.5s ease-out;
-    --notchSize: 25px;
+    --notchSize: 10px;
     clip-path: polygon(
             0% var(--notchSize),
             var(--notchSize) 0%,
@@ -19,10 +19,12 @@ h1, h2, h3, h4, h5, h6 {
             var(--notchSize) 100%,
             0% calc(100% - var(--notchSize))
     );
-    padding: 25px;
+    padding: 15px;
+    width: 15vw;
+    text-align: center;
 }
 
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
     background-color: rgba(255, 255, 128, 0.1);
 }
 
@@ -43,7 +45,7 @@ li {
     }
 
 
-    h1, h2, h3, h4, h5, h6 {
+    h2, h3, h4, h5, h6 {
         background-color: rgba(0, 0, 0, 0.05);
     }
 
@@ -59,7 +61,7 @@ li {
         color: rgba(255, 255, 255, 0.9);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h2, h3, h4, h5, h6 {
         background-color: rgba(255, 255, 255, 0.05);
     }
 
@@ -87,4 +89,8 @@ li {
 
 .justify-text {
     text-align: justify;
+}
+
+.title {
+    align-content: center;
 }
