@@ -19,8 +19,8 @@ h2, h3, h4, h5, h6 {
             var(--notchSize) 100%,
             0% calc(100% - var(--notchSize))
     );
-    padding: 15px;
-    width: 15vw;
+    padding: 10px;
+    width: 20vw;
     text-align: center;
 }
 
