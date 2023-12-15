@@ -1,12 +1,54 @@
-/* General */
+/*Dark/Light*/
+:root {
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+    * {
+        --theme: rgb(128, 0, 255);
+        --theme-darker: rgb(64, 0, 128);
+        --back: rgb(200, 200, 200);
+        --on-back: rgb(16, 16, 16);
+        --alt-back: rgb(212, 212, 212);
+        --hover: rgb(225, 225, 225);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        --theme: rgb(255, 255, 128);
+        --theme-darker: rgb(128, 128, 64);
+        --back: rgb(32, 32, 32);
+        --on-back: rgb(225, 225, 225);
+        --alt-back: rgb(24, 24, 24);
+        --hover: rgb(16, 16, 16);
+    }
+}
+
+/*Elements*/
 body {
-    font-family: Heebo, serif;
-    align-content: center;
+    background-color: var(--back);
+    color: var(--on-back);
+    font-family: Verdana, serif;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin: 50px;
 }
 
-h2, h3, h4, h5, h6 {
+*::selection {
+    background: var(--theme);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+a:link {
+    color: var(--theme);
+}
+
+a:visited {
+    color: var(--theme-darker);
+}
+
+td, th, h2, h3, h4, h5, h6 {
+    background-color: var(--alt-back);
     transition: background-color 0.5s ease-out;
     --notchSize: 10px;
     clip-path: polygon(
@@ -22,67 +64,26 @@ h2, h3, h4, h5, h6 {
     padding: 10px;
     width: 20vw;
     text-align: center;
+    margin-left: -20px;
 }
 
-h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
-    background-color: rgba(255, 255, 128, 0.1);
+td, th {
+    padding: 10px;
+}
+
+td:hover, th:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    background-color: var(--hover);
 }
 
 li {
     line-height: 2em;
 }
 
-/* Light mode */
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: rgb(220, 220, 220);
-        color: rgba(0, 0, 0, 0.9);
-    }
-
-    *::selection {
-        background: rgba(255, 255, 128, 0.9);
-        color: rgba(0, 0, 0, 0.9);
-    }
-
-
-    h2, h3, h4, h5, h6 {
-        background-color: rgba(0, 0, 0, 0.05);
-    }
-
-    .hide_if_light {
-        display: none;
-    }
+*::marker {
+    color: var(--theme);
 }
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: rgba(0, 0, 0, 0.9);
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    h2, h3, h4, h5, h6 {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    *::selection {
-        background: rgba(255, 255, 128, 0.9);
-        color: rgba(0, 0, 0, 0.9);
-    }
-
-    a:link {
-        color: rgba(255, 255, 128, 0.9);
-    }
-
-    a:visited {
-        color: rgba(256, 192, 128, 0.9);
-    }
-
-    .hide_if_dark {
-        display: none;
-    }
-}
-
+/*Classes*/
 .center-text {
     text-align: center;
 }
@@ -93,4 +94,9 @@ li {
 
 .title {
     align-content: center;
+}
+
+.no-bullet-list {
+    list-style-type: none;
+    padding-left: 0;
 }
