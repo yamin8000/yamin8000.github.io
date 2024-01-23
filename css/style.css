@@ -1,31 +1,29 @@
-/*Dark/Light*/
 :root {
     color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: light) {
     * {
-        --theme: rgb(128, 0, 255);
-        --theme-darker: rgb(64, 0, 128);
-        --back: rgb(200, 200, 200);
-        --on-back: rgb(16, 16, 16);
-        --alt-back: rgb(212, 212, 212);
-        --hover: rgb(225, 225, 225);
+        --theme: rgb(128 0 255);
+        --theme-darker: rgb(64 0 128);
+        --back: rgb(200 200 200);
+        --on-back: rgb(16 16 16);
+        --alt-back: rgb(212 212 212);
+        --hover: rgb(225 225 225);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     * {
-        --theme: rgb(255, 255, 128);
-        --theme-darker: rgb(128, 128, 64);
-        --back: rgb(32, 32, 32);
-        --on-back: rgb(225, 225, 225);
-        --alt-back: rgb(24, 24, 24);
-        --hover: rgb(16, 16, 16);
+        --theme: rgb(255 255 128);
+        --theme-darker: rgb(128 128 64);
+        --back: rgb(32 32 32);
+        --on-back: rgb(225 225 225);
+        --alt-back: rgb(24 24 24);
+        --hover: rgb(16 16 16);
     }
 }
 
-/*Elements*/
 body {
     background-color: var(--back);
     color: var(--on-back);
@@ -36,7 +34,7 @@ body {
 
 *::selection {
     background: var(--theme);
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, 90%);
 }
 
 a:link {
@@ -50,16 +48,17 @@ a:visited {
 h2 span, h3 span, h4 span, h5 span, h6 span {
     background-color: var(--alt-back);
     transition: background-color 0.5s ease-out;
-    --notchSize: 10px;
+
+    --notch-size: 10px;
     clip-path: polygon(
-            0% var(--notchSize),
-            var(--notchSize) 0%,
-            calc(100% - var(--notchSize)) 0%,
-            100% var(--notchSize),
-            100% calc(100% - var(--notchSize)),
-            calc(100% - var(--notchSize)) 100%,
-            var(--notchSize) 100%,
-            0% calc(100% - var(--notchSize))
+            0% var(--notch-size),
+            var(--notch-size) 0%,
+            calc(100% - var(--notch-size)) 0%,
+            100% var(--notch-size),
+            100% calc(100% - var(--notch-size)),
+            calc(100% - var(--notch-size)) 100%,
+            var(--notch-size) 100%,
+            0% calc(100% - var(--notch-size))
     );
     padding: 15px 35px;
     text-align: center;
@@ -90,8 +89,6 @@ li {
 *::marker {
     color: var(--theme);
 }
-
-/*Classes*/
 
 ul.vertical-list {
     list-style: none;
