@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: light) {
     * {
-        --theme: rgb(16, 16, 128);
+        --theme: rgb(16 16 128);
         --theme-darker: rgb(8 8 64);
         --back: rgb(200 200 200);
         --on-back: rgb(16 16 16);
@@ -18,8 +18,8 @@
 
 @media (prefers-color-scheme: dark) {
     * {
-        --theme: rgb(255, 128, 32);
-        --theme-darker: rgb(128, 64, 16);
+        --theme: rgb(255 128 32);
+        --theme-darker: rgb(128 64 16);
         --back: rgb(32 32 32);
         --on-back: rgb(225 225 225);
         --alt-back: rgb(24 24 24);
