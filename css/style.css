@@ -1,55 +1,70 @@
 :root {
     color-scheme: light dark;
     scroll-behavior: smooth;
-    border-top: 2px solid var(--theme);
-    border-bottom: 2px solid var(--theme);
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
 }
 
 @media (prefers-color-scheme: light) {
     * {
-        --theme: rgb(16 16 128);
-        --theme-darker: rgb(8 8 64);
-        --back: rgb(200 200 200);
+        --primary: rgb(16 16 128);
+        --primary-darker: rgb(8 8 64);
+        --secondary: rgb(26 83 150);
+        --back: rgb(220 220 220);
         --on-back: rgb(16 16 16);
-        --alt-back: rgb(212 212 212);
-        --hover: rgb(225 225 225);
+        --alt-back: rgb(230 230 230);
+        --hover: rgb(240 240 240);
+    }
+
+    *::selection {
+        color: rgba(255, 255, 255, 90%);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     * {
-        --theme: rgb(255 128 32);
-        --theme-darker: rgb(128 64 16);
+        --primary: rgb(255 128 32);
+        --primary-darker: rgb(128 64 16);
+        --secondary: rgb(236 181 38);
         --back: rgb(32 32 32);
         --on-back: rgb(225 225 225);
         --alt-back: rgb(24 24 24);
         --hover: rgb(16 16 16);
     }
+
+    *::selection {
+        color: rgba(0, 0, 0, 90%);
+    }
 }
 
 body {
+    perspective: 1000px;
     background-color: var(--back);
     color: var(--on-back);
-    font-family: Verdana, serif;
+    font-family: Arial, serif;
+    font-weight: bold;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin: 50px 25px;
 }
 
 *::selection {
-    background: var(--theme);
-    color: rgba(0, 0, 0, 90%);
+    background: var(--secondary);
 }
 
 a:link {
-    color: var(--theme);
+    color: var(--primary);
 }
 
 a:visited {
-    color: var(--theme-darker);
+    color: var(--primary-darker);
+}
+
+h1 {
+    color: var(--secondary);
 }
 
 h2 span, h3 span, h4 span, h5 span, h6 span {
-    color: var(--theme);
+    color: var(--primary);
     background-color: var(--alt-back);
     transition: background-color 0.5s ease-out;
 
@@ -68,13 +83,18 @@ h2 span, h3 span, h4 span, h5 span, h6 span {
     text-align: center;
 }
 
+table thead {
+    color: var(--secondary);
+    background-color: var(--alt-back);
+}
+
 td, th {
     padding: 10px;
-    border-bottom: var(--alt-back) solid 5px;
+    border-bottom: var(--alt-back) solid 3px;
 }
 
 td:nth-child(2), th:nth-child(2) {
-    border-left: var(--alt-back) solid 5px;
+    border-left: var(--alt-back) solid 3px;
 }
 
 tr:last-child td {
@@ -90,7 +110,7 @@ li {
 }
 
 *::marker {
-    color: var(--theme);
+    color: var(--secondary);
 }
 
 nav {
@@ -141,4 +161,58 @@ li.vertical-list-item {
             var(--notch-size) 100%,
             0% calc(100% - var(--notch-size))
     );
+}
+
+.card {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 2in;
+    width: 3.5in;
+    margin: 25px auto;
+    background: linear-gradient(var(--alt-back), var(--back));
+    color: var(--primary);
+    border-radius: 5px;
+    transform: rotate3d(1, 1, -1, 22deg);
+    transition: transform 0.5s ease-out;
+    box-shadow: -5px 10px 20px var(--alt-back), inset 5px 5px 5px var(--alt-back);
+}
+
+.card:hover {
+    transform: rotate3d(1, 1, -1, 10deg);
+}
+
+.card > * {
+    text-shadow: 1px 1px 0 var(--alt-back);
+}
+
+.card-top {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 10pt 10pt 0 10pt;
+    font-size: 12pt;
+    letter-spacing: 1.2pt;
+}
+
+.card-middle {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+.card-middle .title {
+    font-size: 14pt;
+    color: var(--secondary);
+}
+
+.card-bottom {
+    display: flex;
+    flex-flow: column;
+    font-size: 10pt;
+    padding: 0 0 10pt 0;
+    text-align: center;
 }
