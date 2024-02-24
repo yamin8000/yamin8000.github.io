@@ -191,7 +191,7 @@ li.vertical-list-item {
     flex-flow: column;
     justify-content: center;
     gap: 10px;
-    padding: 10pt 10pt 0 10pt;
+    padding: 10pt 10pt 0;
     font-size: 12pt;
     letter-spacing: 1.2pt;
 }
@@ -213,6 +213,6 @@ li.vertical-list-item {
     display: flex;
     flex-flow: column;
     font-size: 10pt;
-    padding: 0 0 10pt 0;
+    padding: 0 0 10pt;
     text-align: center;
 }
