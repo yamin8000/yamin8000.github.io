@@ -1,5 +1,5 @@
 :root {
-    color-scheme: light dark;
+    color-scheme: dark light;
     scroll-behavior: smooth;
     border-top: 2px solid var(--primary);
     border-bottom: 2px solid var(--primary);
