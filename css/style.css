@@ -51,6 +51,14 @@ body {
     background: var(--secondary);
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 a:link {
     color: var(--primary);
 }
